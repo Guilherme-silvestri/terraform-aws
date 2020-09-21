@@ -20,3 +20,12 @@ resource "aws_security_group" "acesso-https" {
     Name = "ssh"
   }
 }
+
+resource "aws_vpc" "main" {
+  cidr_block       = "10.1.0.0/24"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "internal_network"
+  }
+}
